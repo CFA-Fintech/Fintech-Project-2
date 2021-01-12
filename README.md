@@ -9,14 +9,14 @@ Our project is to create a trading algorithm for Apple (AAPL) stock. We'll fit a
 ## Overview
 We interest in stock market trading algotrthms
 
-We will use DataReader and yfinance (Yahoo Finance)
+We will use DataReader and yfinance (Yahoo Finance) 
 
-Machine leader and stat models expect to explore are: 
+Machine learning and stat models expect to explore are: 
 RandomForest
 Deep Neural Network
 LSTM
-Moving averages
-Bolinger band
+Moving Averages
+Bollinger Bands
 Exponetal Smoothing
 
 ## Model Eval
