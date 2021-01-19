@@ -27,7 +27,7 @@ Our project is to create a trading algorithm, using Apple (AAPL) stock as a base
 
 
 ### Random Forest Trading
-##### With the Random Forest, there is two different csv files. a model was loaded. The X_test is giving us data to used as we import the dump, load from joblib. By incorporating the apple stock data into our model to predict the y-values from the X-test values. 
+#### With the Random Forest, there is two different csv files. a model was loaded. The X_test is giving us data to used as we import the dump, load from joblib. By incorporating the apple stock data into our model to predict the y-values from the X-test values. 
 
 ![image](https://user-images.githubusercontent.com/69773959/105057971-fcbc5e00-5a32-11eb-9f03-b3df01466c3d.png)
 
@@ -96,4 +96,4 @@ Now for each day we have the closing price for the day, the open price for the d
 
 ![image](https://user-images.githubusercontent.com/69773959/105060306-76554b80-5a35-11eb-9c94-8fa5c1214b16.png)
 
-## In conclusion, the Random Forest model gave us a date that was best to trade and have a positive return. While the LSTM mentioned the Apple stock was best to buy and hold. They are bnoth benefical to trade, making Apple a stock to invest and see an ROI. 
+#### In conclusion, the Random Forest model gave us a date that was best to trade and have a positive return. While the LSTM mentioned the Apple stock was best to buy and hold. They are bnoth benefical to trade, making Apple a stock to invest and see an ROI. 
