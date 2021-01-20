@@ -38,7 +38,7 @@ Using these trading signals we then assign Training (75%) and Testing (25%) wind
 
 We then checked to see the relative importance of each of the three factos and checked the model's effectiveness:
 
-[Insert Model_Results.png]
+[Insert Model_Results(line41).png]
 
 #### Next, we added the predicted results to the actual results' dataframe which can be seen as the following:
 
@@ -97,17 +97,17 @@ In machine learning, SVMs are supervised learning models with associated learnin
 
 Using the same set of Apple stock price data as the prior two models, we then determine the correct trading signal to determine when to buy or sell Apple's stock.  We will store +1 for buy signal and -1 for sell signal in the Signal column. 'y' is a target dataset storing the correct trading signal which the machine learning algorithm will try to predict.  The X is a dataset that holds the variables which are used to predict y, that is, whether Apple stock price will go up (1) or go down (-1) tomorrow. The X consists of variables such as 'Open - Close', 'High - Low' and 'Volume'. These can be understood as indicators based on which the algorithm will predict tomorrow's trend.
 
-[Insert graphic]
+[Insert graphic - Indicators(line100).png]
 
 We then use the SVC() function from sklearn.svm.SVC library for the classification and create our classifier model using the fit() method on the training data set.
 
 Similar to the Random Forest model, we compute the accuarcy of the algorithm on the train and test data set, by comparing the actual values of Signal with the predicted values of Signal.  An accuracy of 50%+ in test data suggests that the classifier model is effective.
 
-[Insert graphic]
+[Insert graphic - Accuracy(line106).png]
 
 We then predict the signal (buy or sell) for the test data set, using the cls.predict() fucntion and compute the strategy returns based on the predicted signal, saving it in the dataframe column 'Strategy_Return' and plot the cumulative strategy returns.
 
-[Insert graphic]
+[Insert graphic - Returns(line110).png]
 
 As seen from the above graph, the strategy generates a return of 75%+ for the test data set.
 
