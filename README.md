@@ -38,7 +38,7 @@ Using these trading signals we then assign Training (75%) and Testing (25%) wind
 
 We then checked to see the relative importance of each of the three factos and checked the model's effectiveness:
 
-[Insert Model_Results(line41).png]
+![Model_Results(line41).png](Images/Model_Results(line41).png)
 
 #### Next, we added the predicted results to the actual results' dataframe which can be seen as the following:
 
