@@ -86,7 +86,7 @@ Now for each day we have the closing price for the day, the open price for the d
 
 ##### We took a test period of 0.82. Taking a look at the results, Buy and Hold and 50-day Moving Average looks like the best strategy when it comes to Total gross yield and Annual gross yield. Although 5-day Moving Average is also quite promising, what is clearly evident is that the LTSM model does not create a superior trading model versus either Buy and Hold or trading based on moving averages.
 
-![image](https://user-images.githubusercontent.com/69773959/105060306-76554b80-5a35-11eb-9c94-8fa5c1214b16.png)
+![image](https://user-images.githubusercontent.com/70610967/105271114-cd4d4480-5b4b-11eb-8f74-b4042af7d235.png)
 
 
 ##Support Vector Machine (SVM)
