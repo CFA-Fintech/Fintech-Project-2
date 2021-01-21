@@ -82,7 +82,7 @@ Now for each day we have the closing price for the day, the open price for the d
 
 #### Now we can compare our LSTM-trading-strategy with the both a buy and hold strategy and a moving average strategy (both 5-day and 50-day). In order to do so we compute the corresponding vectors v_bh and v_ma (short and long) which select the days during which we are going to stay in the market.
 
-![image](https://user-images.githubusercontent.com/69773959/105060209-5aea4080-5a35-11eb-8b36-ca8e41f512da.png)
+![image](https://user-images.githubusercontent.com/70610967/105270928-73e51580-5b4b-11eb-900b-3447618304cb.png)
 
 ##### We took a test period of 0.82. Taking a look at the results, Buy and Hold and 50-day Moving Average looks like the best strategy when it comes to Total gross yield and Annual gross yield. Although 5-day Moving Average is also quite promising, what is clearly evident is that the LTSM model does not create a superior trading model versus either Buy and Hold or trading based on moving averages.
 
@@ -107,7 +107,7 @@ Similar to the Random Forest model, we compute the accuarcy of the algorithm on 
 
 We then predict the signal (buy or sell) for the test data set, using the cls.predict() fucntion and compute the strategy returns based on the predicted signal, saving it in the dataframe column 'Strategy_Return' and plot the cumulative strategy returns.
 
-![image](https://user-images.githubusercontent.com/69773959/105270777-95e29600-5b53-11eb-8668-532d6f0a18ae.png)
+[Insert graphic - Returns(line110).png]
 
 As seen from the above graph, the strategy generates a return of 75%+ for the test data set.
 
