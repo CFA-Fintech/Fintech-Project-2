@@ -107,7 +107,7 @@ Similar to the Random Forest model, we compute the accuarcy of the algorithm on 
 
 We then predict the signal (buy or sell) for the test data set, using the cls.predict() fucntion and compute the strategy returns based on the predicted signal, saving it in the dataframe column 'Strategy_Return' and plot the cumulative strategy returns.
 
-[Insert graphic - Returns(line110).png]
+![image](https://user-images.githubusercontent.com/69773959/105270777-95e29600-5b53-11eb-8668-532d6f0a18ae.png)
 
 As seen from the above graph, the strategy generates a return of 75%+ for the test data set.
 
