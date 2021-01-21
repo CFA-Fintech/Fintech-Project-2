@@ -28,7 +28,7 @@ Our project was to create a trading algorithm, using Apple (AAPL) stock as a bas
 
 
 ### Random Forest Trading
-#### With the Random Forest, we create a trading signals CSV file based on (1) Exponential Moving Average of Closing Prices, (2) Exponential Moving Average of Daily Return Volatility and (3) Bollinger Bands. These signals are expressed as 1, 0 or -1:
+With the Random Forest, we create a trading signals CSV file based on (1) Exponential Moving Average of Closing Prices, (2) Exponential Moving Average of Daily Return Volatility and (3) Bollinger Bands. These signals are expressed as 1, 0 or -1:
 
 ![image](https://user-images.githubusercontent.com/69773959/105057971-fcbc5e00-5a32-11eb-9f03-b3df01466c3d.png)
 
@@ -40,7 +40,7 @@ We then checked to see the relative importance of each of the three factos and c
 
 ![Model_Results(line41).png](Images/Model_Results(line41).png)
 
-#### Next, we added the predicted results to the actual results' dataframe which can be seen as the following:
+Next, we added the predicted results to the actual results' dataframe which can be seen as the following:
 
 ![image](https://user-images.githubusercontent.com/69773959/105058242-3beaaf00-5a33-11eb-983f-fd3bbaa71305.png)
 
@@ -50,41 +50,41 @@ We then plotted the predicted results versus actual results:
 
 ![image](https://user-images.githubusercontent.com/69773959/105058302-4d33bb80-5a33-11eb-9478-c0ae4068cc86.png)
 
-#### Looking at a plot of just the last 100 predicted results versus Actual results gives us the following:
+Looking at a plot of just the last 100 predicted results versus Actual results gives us the following:
 
 ![image](https://user-images.githubusercontent.com/69773959/105058533-8e2bd000-5a33-11eb-837a-c1374e2c403a.png)
 
-#### At the end of the day, the usefulness of a predictive model is how well it does given new data.  Using the Random Forest Model to predict when to buy and sell provides the following returns based on Apple's stock price: 
+At the end of the day, the usefulness of a predictive model is how well it does given new data.  Using the Random Forest Model to predict when to buy and sell provides the following returns based on Apple's stock price: 
 
 ![image](https://user-images.githubusercontent.com/69773959/105058648-abf93500-5a33-11eb-9c59-e5fc069bb49d.png)
 
 
 ### Long short-term memory (LSTM)
-#### A second deep learning model we used was the Long short-term memory (LSTM) model.  LTSM is an artificial recurrent neural network (RNN) architecture and is well-suited to classifying, processing and making predictions based on time series data (such as stock price data).  Like the Random Forest model, we want to use a LSTM neural network to decide, given the openning stock price for each day of the test period, whether we are going to stay in the market for that day or not.  We reshape the data (the LSTM wants the data in a particular shape, involving "windows") and at each step we want to predict the closing price of the day: in this way we will be able to find the vector v which selects the days during which we are going to stay in the market. For this model, we again use the same data to run our model. With this model, as we use 5 and 50 day moving averages, we start 50 days after the initial start (1/6/2016) and end before 1/5/2021. 
+A second deep learning model we used was the Long short-term memory (LSTM) model.  LTSM is an artificial recurrent neural network (RNN) architecture and is well-suited to classifying, processing and making predictions based on time series data (such as stock price data).  Like the Random Forest model, we want to use a LSTM neural network to decide, given the openning stock price for each day of the test period, whether we are going to stay in the market for that day or not.  We reshape the data (the LSTM wants the data in a particular shape, involving "windows") and at each step we want to predict the closing price of the day: in this way we will be able to find the vector v which selects the days during which we are going to stay in the market. For this model, we again use the same data to run our model. With this model, as we use 5 and 50 day moving averages, we start 50 days after the initial start (1/6/2016) and end before 1/5/2021. 
 
 Now for each day we have the closing price for the day, the open price for the day (proxy for the closing price of the previous day) and the open price of the following day.  From this data we derive the feature rapp, which is the quotient between the open and closing prices of the day. It is used to give us the variation of the portfolio for the day. The gross yield was computed using rapp.
 
 ![image](https://user-images.githubusercontent.com/69773959/105059499-96383f80-5a34-11eb-94e2-215e8d03fd9d.png)
 
-#### To this dataframe we added columns corresponding to the 5 and 50 day moving averages. As mentioned previously, we then removed the first 50 days since they do not have the 50 days moving average. 
+To this dataframe we added columns corresponding to the 5 and 50 day moving averages. As mentioned previously, we then removed the first 50 days since they do not have the 50 days moving average. 
 
-#### We want to use a LSTM neural network to decide, given the openning stock price for each day of the test period, whether we are going to stay in the market for that day or not.  We reshape the data (the LSTM wants the data in a particular shape, involving "windows") and at each step we want to predict the closing price of the day: in this way we will be able to find the vector v which selects the days during which we are going to stay in the market.  We then divided the dataframe into Train and Test sets (75/25) and defined the LTSM model.  We then run the model with 100 epochs and a batch size of 30.  Other epoch and batch size amounts were used but the significant increase in time was not worth the small incrmental decrease in 'val_loss'.
+We want to use a LSTM neural network to decide, given the openning stock price for each day of the test period, whether we are going to stay in the market for that day or not.  We reshape the data (the LSTM wants the data in a particular shape, involving "windows") and at each step we want to predict the closing price of the day: in this way we will be able to find the vector v which selects the days during which we are going to stay in the market.  We then divided the dataframe into Train and Test sets (75/25) and defined the LTSM model.  We then run the model with 100 epochs and a batch size of 30.  Other epoch and batch size amounts were used but the significant increase in time was not worth the small incrmental decrease in 'val_loss'.
 
 ![image](https://user-images.githubusercontent.com/69773959/105059813-ea432400-5a34-11eb-97ee-34f60062cd40.png)
 
-#### Next, we can plot the predicted versus actual values. Notice that the predicted values are almost identical to the actual values; however, they are always one step ahead:
+Next, we can plot the predicted versus actual values. Notice that the predicted values are almost identical to the actual values; however, they are always one step ahead:
 
 ![image](https://user-images.githubusercontent.com/69773959/105060007-224a6700-5a35-11eb-891f-3d7facbb106b.png)
 
-#### We stay in the market when the predicted price for the day's close is greater than the current day's opening price and stay out otherwise. The vector v indicates the "in days" (as 1s) and "out days" (as 0s)
+We stay in the market when the predicted price for the day's close is greater than the current day's opening price and stay out otherwise. The vector v indicates the "in days" (as 1s) and "out days" (as 0s)
 
 ![image](https://user-images.githubusercontent.com/69773959/105060113-3e4e0880-5a35-11eb-9d5f-88a342425dc3.png)
 
-#### Now we can compare our LSTM-trading-strategy with the both a buy and hold strategy and a moving average strategy (both 5-day and 50-day). In order to do so we compute the corresponding vectors v_bh and v_ma (short and long) which select the days during which we are going to stay in the market.
+Now we can compare our LSTM-trading-strategy with the both a buy and hold strategy and a moving average strategy (both 5-day and 50-day). In order to do so we compute the corresponding vectors v_bh and v_ma (short and long) which select the days during which we are going to stay in the market.
 
 ![image](https://user-images.githubusercontent.com/70610967/105270928-73e51580-5b4b-11eb-900b-3447618304cb.png)
 
-##### We took a test period of 0.82. Taking a look at the results, Buy and Hold and 50-day Moving Average looks like the best strategy when it comes to Total gross yield and Annual gross yield. Although 5-day Moving Average is also quite promising, what is clearly evident is that the LTSM model does not create a superior trading model versus either Buy and Hold or trading based on moving averages.
+We took a test period of 0.82. Taking a look at the results, Buy and Hold and 50-day Moving Average looks like the best strategy when it comes to Total gross yield and Annual gross yield. Although 5-day Moving Average is also quite promising, what is clearly evident is that the LTSM model does not create a superior trading model versus either Buy and Hold or trading based on moving averages.
 
 ![image](https://user-images.githubusercontent.com/70610967/105271114-cd4d4480-5b4b-11eb-8f74-b4042af7d235.png)
 
