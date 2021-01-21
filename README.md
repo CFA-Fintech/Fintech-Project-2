@@ -103,7 +103,7 @@ We then use the SVC() function from sklearn.svm.SVC library for the classificati
 
 Similar to the Random Forest model, we compute the accuarcy of the algorithm on the train and test data set, by comparing the actual values of Signal with the predicted values of Signal.  An accuracy of 50%+ in test data suggests that the classifier model is effective.
 
-[Insert graphic - Accuracy(line106).png]
+![image](https://user-images.githubusercontent.com/69773959/105270603-48662900-5b53-11eb-8f2f-9b45a9195a48.png)
 
 We then predict the signal (buy or sell) for the test data set, using the cls.predict() fucntion and compute the strategy returns based on the predicted signal, saving it in the dataframe column 'Strategy_Return' and plot the cumulative strategy returns.
 
