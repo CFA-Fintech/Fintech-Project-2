@@ -97,7 +97,7 @@ In machine learning, SVMs are supervised learning models with associated learnin
 
 Using the same set of Apple stock price data as the prior two models, we then determine the correct trading signal to determine when to buy or sell Apple's stock.  We will store +1 for buy signal and -1 for sell signal in the Signal column. 'y' is a target dataset storing the correct trading signal which the machine learning algorithm will try to predict.  The X is a dataset that holds the variables which are used to predict y, that is, whether Apple stock price will go up (1) or go down (-1) tomorrow. The X consists of variables such as 'Open - Close', 'High - Low' and 'Volume'. These can be understood as indicators based on which the algorithm will predict tomorrow's trend.
 
-[Insert graphic - Indicators(line100).png]
+![image](https://user-images.githubusercontent.com/69773959/105270274-be1dc500-5b52-11eb-8609-6dad5654f96f.png)
 
 We then use the SVC() function from sklearn.svm.SVC library for the classification and create our classifier model using the fit() method on the training data set.
 
