@@ -89,7 +89,7 @@ Now for each day we have the closing price for the day, the open price for the d
 ![image](https://user-images.githubusercontent.com/70610967/105271114-cd4d4480-5b4b-11eb-8f74-b4042af7d235.png)
 
 
-##Support Vector Machine (SVM)
+## Support Vector Machine (SVM)
 
 Our third machine learning model evaluated was Support Vector Machine (SVM).  
 
